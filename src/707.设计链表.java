@@ -1,29 +1,18 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
+/*
+ * @lc app=leetcode.cn id=707 lang=java
+ *
+ * [707] 设计链表
+ */
 
-public class Main {
-    public static void main(String[] args) {
-        MyLinkedList myLinkedList = new MyLinkedList();
-        myLinkedList.addAtHead(7);
-        myLinkedList.addAtHead(2);
-        myLinkedList.addAtHead(1);
-        myLinkedList.addAtIndex(3, 0);
-        myLinkedList.deleteAtIndex(0);
-    }
-}
-
+// @lc code=start
 class MyLinkedList {
     
     int num;
     ListNode head;
 
     public MyLinkedList() {
-        this.num = 0;
-        this.head = new ListNode(0);
+        num = 0;
+        head = new ListNode(0);
     }
     
     public int get(int index) {
@@ -68,6 +57,7 @@ class MyLinkedList {
             curNode = curNode.next;
         }
         curNode.next = curNode.next.next;
+        num--;
     }
 }
 
@@ -78,3 +68,15 @@ class ListNode{
         this.val = val;
     }
 }
+
+/**
+ * Your MyLinkedList object will be instantiated and called as such:
+ * MyLinkedList obj = new MyLinkedList();
+ * int param_1 = obj.get(index);
+ * obj.addAtHead(val);
+ * obj.addAtTail(val);
+ * obj.addAtIndex(index,val);
+ * obj.deleteAtIndex(index);
+ */
+// @lc code=end
+
