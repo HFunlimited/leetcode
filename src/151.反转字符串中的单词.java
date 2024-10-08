@@ -1,20 +1,18 @@
+/*
+ * @lc app=leetcode.cn id=151 lang=java
+ *
+ * [151] 反转字符串中的单词
+ */
+
+// @lc code=start
+
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.LinkedList;
 
-public class Main {
-    public static void main(String[] args) {
-        String s = "  hello world  ";
-        System.out.println(reverseWords(s));
-    }
-
-    public static String reverseWords(String s) {
+class Solution {
+    public String reverseWords(String s) {
         ArrayList<String> arr = new ArrayList<>();
         StringBuilder stringBuilder = new StringBuilder();
+
         for(char c: s.toCharArray()){
             if(c != ' '){
                 stringBuilder.append(c);
@@ -27,13 +25,27 @@ public class Main {
             arr.add(stringBuilder.toString());
             stringBuilder.setLength(0);
         }
+
         for(int i = arr.size() - 1; i >= 0; i--){
             stringBuilder.append(arr.get(i));
             stringBuilder.append(' ');
         }
         stringBuilder.deleteCharAt(stringBuilder.length() - 1);
-        return stringBuilder.toString();
-    }
-}
 
+        return stringBuilder.toString();
+        
+    }
+        // use repo-function
+        // class Solution {
+        //     public String reverseWords(String s) {
+        //         // 除去开头和末尾的空白字符
+        //         s = s.trim();
+        //         // 正则匹配连续的空白字符作为分隔符分割
+        //         List<String> wordList = Arrays.asList(s.split("\\s+"));
+        //         Collections.reverse(wordList);
+        //         return String.join(" ", wordList);
+        //     }
+        // }
+}
+// @lc code=end
 
