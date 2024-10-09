@@ -5,6 +5,9 @@
  */
 
 // @lc code=start
+
+import java.util.LinkedList;
+
 class Solution {
     // Time Limit Exceed
     // public static String removeDuplicates(String s) {
